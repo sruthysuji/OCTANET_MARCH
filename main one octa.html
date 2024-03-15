@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: 100%;
+            background-image: url("tr.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }
+        .navbar {
+            width: 96.8%;
+            height: 75px;
+            background-color: rgb(5, 81, 91); /* Background color applied to entire navbar */
+            display: flex;
+            justify-content: space-between; /* Aligns items at the start and end */
+            align-items: center;
+            padding: 0 20px; /* Added padding for space between items */
+        }
+        .logo {
+            color: rgb(245, 247, 247);
+            font-size: 35px; /* Added 'px' unit */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .menu {
+            display: flex;
+            justify-content: center; /* Center aligns the menu items */
+            align-items: center;
+            height: 100%;
+        }
+        .menu a {
+            color: white; /* Added for visibility */
+            text-decoration: none; /* Added for clarity */
+            font-size: 20px;
+            margin: 0 15px; /* Adjusts spacing between menu items */
+        }
+        .login-form {
+    position: absolute;
+    top: 95%;
+    right: 100px;
+    transform: translateY(-100%);
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 60px;
+        }
+
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+
+.login-form button {
+    background-color: #097b73; 
+    color: white;
+    border: none;
+    cursor: pointer;
+   
+}
+
+.login-form button:hover {
+    background-color: #044043; 
+}
+.types{
+    position: absolute;
+    top: 86%;
+    left: 60px;
+    transform: translateY(-100%);
+    color:white;
+    
+    padding: 20px;
+    border-radius: 15px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h1 class="logo">Let's Travel</h1>
+            <div class="menu">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">SERVICES</a>
+                <a href="#">MORE</a>
+                <a href="#">CONTACT</a>
+            </div>
+        </div>
+    </div>
+    <div class="types">
+       <b> <h2>Are You Ready For Exploring The World?</h2>
+            <h3><br> Discover New Places!</h3>
+            <br> 
+          <h3><b> Lifelong memories just a few seconds away...</b></h3></b>
+        
+        
+    </div>
+    
+    <div class="login-form">
+        <form>
+            <input type="text" placeholder="From">
+            <input type="text" placeholder="To">
+            <input type="text" placeholder="Starting date">
+            <input type="text" placeholder="Return date">
+            
+            <button type="button"><b>Search Flights</b></button>
+           
+        </form>
+    </div>
+</body>
+</html>

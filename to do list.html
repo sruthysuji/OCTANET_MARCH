@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-image: url(do.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            backdrop-filter: initial;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto; /* Corrected typo here */
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(33, 32, 35, 0.674);
+            color: white;
+            position: absolute;
+            top: 80%;
+            right: 470px;
+            transform: translateY(-150%);
+        }
+        button {
+            padding: 10px;
+            background-color: rgba(8, 83, 108, 0.799); 
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgb(5, 5, 75);
+        }
+        h1 {
+            font-size: 36px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        ul li.checked {
+            color: blanchedalmond;
+            text-decoration: line-through;
+        }
+        span {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TO-DO LIST</h1>
+        <div class="input-container">
+            <input type="text" id="task" placeholder="Add your new task">
+            <input type="date" id="duedate"><br><br>
+            <button onclick="addTask()">ADD TASK</button>
+        </div>
+        <ul id="tasklist"></ul>
+    </div>
+
+    <script>
+        const task = document.getElementById('task');
+        const date = document.getElementById('duedate');
+        const listContainer = document.getElementById('tasklist');
+
+        function addTask() {
+            if (task.value === '') {
+                alert("You must enter some task!");
+            } else {
+                let li = document.createElement("li");
+                let taskText = document.createTextNode(task.value + ' - ' + date.value);
+                li.appendChild(taskText);
+                listContainer.appendChild(li);
+                let span = document.createElement("span");
+                span.innerHTML = "\u00D7";
+                span.onclick = function() {
+                    li.remove();
+                };
+                li.appendChild(span);
+            }
+            task.value = "";
+            date.value = "";
+        }
+    </script>
+</body>
+</html>
